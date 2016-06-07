@@ -2,5 +2,5 @@ Rails.application.routes.draw do
 
   resources :socks, only: [:index]
 
-  get '/:category_title', to: 'categories#show'
+  get '/:navigation_title', to: 'navigations#show'
 end
