@@ -1,5 +1,9 @@
 <div id="all_socks">
-<% @socks.each do |sock| %>
-<%= sock.name %>: <%= sock.price %>, <%= sock.foot %>, <%= link_to sock.image_url  %>
-<% end %>
+  <% @socks.each do |sock| %>
+  <div class="one-sock col-md-4">
+    <%= image_tag sock.image_url, size: "250x400" %>
+    <h4><%= sock.name %>:</h4>
+     $<%= sock.price %>, <%= sock.foot %>
+  </div>
+  <% end %>
 </div>
