@@ -1,5 +1,5 @@
 <div id="all_socks">
 <% @socks.each do |sock| %>
-<%= sock.name %>: <%= sock.price %>, <%= sock.foot %>, <%= link_to "Image", sock.image_url  %>
+<%= sock.name %>: <%= sock.price %>, <%= sock.foot %>, <%= link_to sock.image_url  %>
 <% end %>
 </div>
