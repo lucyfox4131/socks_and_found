@@ -1,7 +1,9 @@
+<h2><%= @title.pluralize(@socks.count) %> (<%= @socks.count %>)</h2>
+
 <div class="socks">
   <% @socks.each do |sock| %>
-    <div class="one-sock">
-      <%= image_tag sock.image_url %>
+    <div class="one-sock col-md-4">
+      <%= image_tag sock.image_url, size: "250x400" %>
       <h4><%= sock.name %></h4>
       $<%= sock.price %>
     </div>

@@ -7,10 +7,10 @@ RSpec.feature "visitor browses category" do
 
     visit "/#{category}"
 
-    within '.socks' do
+    within '.one-sock' do
       expect(page).to have_content sock_1.name
       expect(page).to have_content sock_1.price
-      expect(page).to have_content sock_2.image_url
+      expect(page).to have_css("img[src=\"#{sock_2.image_url}\"]")
       expect(page).to_not have_content sock_2.name
     end
   end
