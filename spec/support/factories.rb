@@ -4,7 +4,7 @@ FactoryGirl.define do
   end
 
   sequence :style_name do |n|
-    "#{n} style"
+    "#{n}_style"
   end
 
   factory :category do

@@ -22,7 +22,7 @@ styles = [{ name: "Dress" },
           { name: "Ankle" }]
 
 socks = [{ name: "The Long Stick Middies", foot: "Left", price: 5.99, image_url: "http://www.dickssportinggoods.com/graphics/product_images/pDSP1-10522711dt.jpg", style_id: 3, category_id: 1, size_id: 2 },
-         { name: "The Steph Currys", foot: "Right", price: 6.99, image_url: "http://i.ebayimg.com/00/s/NjI2WDM5MA==/z/1R8AAOSwHnFVs~WG/$_1.JPG", style_id: 3, category_id: 2, size_id: 3 },
+         { name: "The Steph Currys", foot: "Right", price: 6.99, image_url: "http://i.ebayimg.com/00/s/NjI2WDM5MA==/z/1R8AAOSwHnFVs~WG/$_1.JPG", style_id: 3, category_id: 4, size_id: 3 },
          { name: "The Caviar Cliffords", foot: "Right", price: 9.99, image_url: "https://cdn1.boldsocks.com/wp-content/uploads/2015/03/2240870-20182.jpg", style_id: 1, category_id: 4, size_id: 1 },
          { name: "The One Man Wolf Pack", foot: "Left", price: 9.99, image_url: "http://ep.yimg.com/ay/beltoutlet/windsor-collection-men-s-mid-calf-merino-wool-dress-socks-40.gif", style_id: 1, category_id: 1, size_id: 2 }]
 
