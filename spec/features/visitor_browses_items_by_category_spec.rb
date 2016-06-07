@@ -11,7 +11,7 @@ RSpec.feature "visitor browses category" do
       expect(page).to have_content sock_1.name
       expect(page).to have_content sock_1.price
       expect(page).to have_content sock_2.image_url
-      expect(page).to have_content sock_3.foot
+      expect(page).to_not have_content sock_2.name
     end
   end
 end
