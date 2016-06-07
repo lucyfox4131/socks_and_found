@@ -1,7 +1,9 @@
 <div class="socks">
   <% @socks.each do |sock| %>
-  <%= sock.name %>
-  <%= sock.price %>
-  <%= sock.image_url %>
+    <div class="one-sock">
+      <%= image_tag sock.image_url %>
+      <h4><%= sock.name %></h4>
+      $<%= sock.price %>
+    </div>
   <% end %>
 </div>

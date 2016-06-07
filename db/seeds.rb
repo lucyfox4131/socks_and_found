@@ -17,7 +17,7 @@ sizes = [{ value: "Large" },
 
 styles = [{ name: "Dress" },
           { name: "Athletic" },
-          { name: "Mid Calf" },
+          { name: "Mid-calf" },
           { name: "Wool" },
           { name: "Ankle" }]
 
