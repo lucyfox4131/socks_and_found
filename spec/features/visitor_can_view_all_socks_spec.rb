@@ -9,7 +9,7 @@ RSpec.feature "Visitor views all socks" do
       expect(page).to have_content sock_1.name
       expect(page).to have_content sock_1.price
       expect(page).to have_content sock_2.foot
-      expect(page).to have_content sock_3.image_url
+      expect(page).to have_css("img[src=\"#{sock_3.image_url}\"]")
     end
   end
 end
