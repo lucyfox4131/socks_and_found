@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "Visit adds an item to cart" do
   context "visitor views a sock" do
@@ -11,7 +11,7 @@ RSpec.feature "Visit adds an item to cart" do
 
       click_on "View Cart"
 
-      expect(current_path).to eq('/cart')
+      expect(current_path).to eq("/cart")
 
       within '#cart-sock' do
         expect(page).to have_css("img[src=\"#{sock.image_url}\"]")
