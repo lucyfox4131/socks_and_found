@@ -4,15 +4,15 @@ Rails.application.routes.draw do
 
   resources :socks, only: [:index, :show]
 
-  resources :cart_socks, only: [:create, :destroy]
+  resources :cart_socks, only: [:create, :destroy, :update]
 
-  get '/cart', to: 'cart_socks#show'
+  get "/cart", to: "cart_socks#show"
 
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 
-  get '/dashboard', to: 'users#show'
+  get "/dashboard", to: "users#show"
 
-  get '/:id', to: 'navigations#show'
+  get "/:id", to: "navigations#show"
 end

@@ -7,9 +7,11 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-def add_to_cart(sock)
-  visit sock_path(sock)
-  click_on "Add to Cart"
+def add_to_cart(sock, num = 1)
+  num.times do
+    visit sock_path(sock)
+    click_on "Add to Cart"
+  end
 end
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
