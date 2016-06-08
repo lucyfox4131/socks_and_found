@@ -1,0 +1,22 @@
+<div class="container" id="cart-socks">
+  <% @socks.each do |sock| %>
+    <div class="row cart-sock">
+    <%= image_tag(sock.image_url, size: "100x250") %>
+    <%= sock.name %>
+    <%= sock.price %>
+    <%= sock.foot %>
+    <%= sock.category.title %>
+    <%= sock.size.value %>
+    <%= sock.style.name %>
+    Quantity: <%= @cart.count_of(sock.id) %>
+    <%= button_to "+", cart_sock_path(sock, direction: "plus"), method: :patch %>
+    <%= button_to "-", cart_sock_path(sock, direction: "minus"), method: :patch %>
+    <%= button_to "Remove", cart_sock_path(sock), method: :delete %>
+    </div>
+  <% end %>
+  Total Items in Cart: <%= @cart.total %>
+</div>
+
+<div id="total-cart-price">
+  <h4>Cart Total: <%= number_to_currency(@cart.total_price) %></h4>
+</div>

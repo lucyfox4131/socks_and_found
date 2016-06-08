@@ -42,7 +42,7 @@ FactoryGirl.define do
   end
 
   sequence :price do |n|
-    "#{n} price"
+    n
   end
 
 end
