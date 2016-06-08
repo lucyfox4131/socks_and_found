@@ -2,7 +2,7 @@ require "rails_helper"
 #
 # RSpec.feature "visitor sees login and new account links" do
 #   scenario "visitor visits root page" do
-#     visit '/'
+#     visit "/"
 #
 #     expect(page).to have_link("Login")
 #     click_link "Login"

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "Visitor views all socks" do
   scenario "they see the grid of all socks" do

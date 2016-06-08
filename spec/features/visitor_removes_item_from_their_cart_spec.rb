@@ -13,7 +13,7 @@ require "rails_helper"
 #       click_link "Remove"
 #
 #       expect(current_path).to eq("/cart")
-#       expect(page).to have_css(:color => 'green')
+#       expect(page).to have_css(:color => "green")
 #       expect(page).to have_content("Successfully removed #{sock.name} from your cart.")
 #       expect(page).to have_link("#{sock.name}")
 #
@@ -21,7 +21,7 @@ require "rails_helper"
 #     end
 #   end
 # end
-# 
+#
 # # Background: My cart has an item in it
 #
 # # Then my current page should be "/cart"

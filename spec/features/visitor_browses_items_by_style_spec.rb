@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "visitor browses by style" do
   scenario "visitor sees socks in a specific style" do
@@ -7,7 +7,7 @@ RSpec.feature "visitor browses by style" do
 
     visit "/#{style}"
 
-    within '.socks' do
+    within ".socks" do
       expect(page).to have_content sock_1.name
       expect(page).to have_content sock_1.price
       expect(page).to have_css("img[src=\"#{sock_1.image_url}\"]")
