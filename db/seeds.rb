@@ -6,38 +6,25 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-categories = [{ title: "Men" },
-              { title: "Women" },
-              { title: "Kids" },
-              { title: "Unisex"}]
+category_1 = Category.create(title: "Men")
+category_2 = Category.create(title: "Women")
+category_3 = Category.create(title: "Kids")
+category_4 = Category.create(title: "Unisex")
 
-sizes = [{ value: "Large" },
-         { value: "Medium" },
-         { value: "Small" }]
+size_1 = Size.create(value: "Large")
+size_2 = Size.create(value: "Medium")
+size_3 = Size.create(value: "Small")
 
-styles = [{ name: "Dress" },
-          { name: "Athletic" },
-          { name: "Mid-calf" },
-          { name: "Wool" },
-          { name: "Ankle" }]
+style_1 = Style.create(name: "Dress")
+style_2 = Style.create(name: "Athletic")
+style_3 = Style.create(name: "Mid Calf")
+style_4 = Style.create(name: "Wool")
+style_5 = Style.create(name: "Ankle")
 
-socks = [{ name: "The Long Stick Middies", foot: "Left", price: 5.99, image_url: "http://www.dickssportinggoods.com/graphics/product_images/pDSP1-10522711dt.jpg", style_id: 3, category_id: 1, size_id: 2 },
-         { name: "The Steph Currys", foot: "Right", price: 6.99, image_url: "http://i.ebayimg.com/00/s/NjI2WDM5MA==/z/1R8AAOSwHnFVs~WG/$_1.JPG", style_id: 3, category_id: 4, size_id: 3 },
-         { name: "The Caviar Cliffords", foot: "Right", price: 9.99, image_url: "https://cdn1.boldsocks.com/wp-content/uploads/2015/03/2240870-20182.jpg", style_id: 1, category_id: 4, size_id: 1 },
-         { name: "The One Man Wolf Pack", foot: "Left", price: 9.99, image_url: "http://ep.yimg.com/ay/beltoutlet/windsor-collection-men-s-mid-calf-merino-wool-dress-socks-40.gif", style_id: 1, category_id: 1, size_id: 2 }]
-
-
-categories.each do |category|
-  Category.create(category)
-end
-
-sizes.each do |size|
-  Size.create(size)
-end
-
-styles.each do |style|
-  Style.create(style)
-end
+socks = [{ name: "The Long Stick Middies", foot: "Left", price: 5.99, image_url: "http://www.dickssportinggoods.com/graphics/product_images/pDSP1-10522711dt.jpg", style_id: style_3.id, category_id: category_1.id, size_id: size_2.id },
+         { name: "The Steph Currys", foot: "Right", price: 6.99, image_url: "http://i.ebayimg.com/00/s/NjI2WDM5MA==/z/1R8AAOSwHnFVs~WG/$_1.JPG", style_id: style_3.id, category_id: category_4.id, size_id: size_3.id },
+         { name: "The Caviar Cliffords", foot: "Right", price: 9.99, image_url: "https://cdn1.boldsocks.com/wp-content/uploads/2015/03/2240870-20182.jpg", style_id: style_1.id, category_id: category_4.id, size_id: size_1.id },
+         { name: "The One Man Wolf Pack", foot: "Left", price: 9.99, image_url: "http://ep.yimg.com/ay/beltoutlet/windsor-collection-men-s-mid-calf-merino-wool-dress-socks-40.gif", style_id: style_1.id, category_id: category_1.id, size_id: size_2.id }]
 
 socks.each do |sock|
   Sock.create(sock)

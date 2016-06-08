@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "visitor browses by style" do
   scenario "visitor sees socks in a specific style" do
     sock_1, sock_2, sock_3 = create_list(:sock, 3)
-    style = sock_1.style.name
+    style = sock_1.style.slug
 
     visit "/#{style}"
 
