@@ -9,6 +9,7 @@
     <%= sock.category.title %>
     <%= sock.size.value %>
     <%= sock.style.name %>
+    <%= button_to "Remove", cart_sock_path(sock), method: :delete %>
     </div>
   <% end %>
 </div>

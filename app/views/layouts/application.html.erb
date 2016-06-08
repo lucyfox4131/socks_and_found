@@ -67,7 +67,7 @@
     </div><!-- /.container-fluid -->
 
       <% flash.each do |name, message| %>
-        <%= content_tag :div, message, id: "flash_#{name}" %>
+        <%= content_tag :div, raw(message), id: "flash_#{name}" %>
       <% end %>
 
       <% if current_user %>
