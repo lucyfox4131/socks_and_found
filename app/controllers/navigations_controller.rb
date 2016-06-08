@@ -1,8 +1,11 @@
 class NavigationsController < ApplicationController
+  before_action
 
   def show
-     category = Category.find_by(title: params[:navigation_title])
-     style = Style.find_by(name: params[:navigation_title])
+     category = Category.find_by_slug(params[:id])
+     style = Style.find_by_slug(params[:id])
+
+    #  byebug
      if category
        @title = category.title
        @socks = category.socks
@@ -13,5 +16,4 @@ class NavigationsController < ApplicationController
        render file: 'public/404'
      end
   end
-
 end
