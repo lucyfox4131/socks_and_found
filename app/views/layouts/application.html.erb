@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ScocksAndFound</title>
+  <title>SocksAndFound</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -50,7 +50,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <% Category.all.each do |category| %>
-                <li><%= link_to category.title, "/#{category.title}" %></li>
+                <li><%= link_to category.title, "/#{category.slug}" %></li>
               <% end %>
             </ul>
           </li>
@@ -58,7 +58,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styles <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <% Style.all.each do |style| %>
-                <li><%= link_to style.name, "/#{style.name}" %></li>
+                <li><%= link_to style.name, "/#{style.slug}" %></li>
               <% end %>
             </ul>
           </li>

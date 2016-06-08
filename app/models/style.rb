@@ -1,12 +1,17 @@
 class Style < ActiveRecord::Base
-  attr_accessible :name, :slug
   has_many :socks
+  before_validation :create_slug
 
   validates :name, presence: true, uniqueness: true
-  validates_presence_of :slug
+  validates :slug, presence: true, uniqueness: { case_sensitive: false}
 
   def to_param
-    slug
+    "#{self.slug}"
+  end
+
+  def create_slug
+    # byebug
+    self.slug = name.parameterize if !name.nil?
   end
 
 end

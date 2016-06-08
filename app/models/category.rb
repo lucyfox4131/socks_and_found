@@ -1,12 +1,15 @@
 class Category < ActiveRecord::Base
-  attr_accessible :title, :slug
   has_many :socks
-
+  before_validation :create_slug
   validates :title, presence: true, uniqueness: true
-  validates_presence_of :slug
+  validates :slug, presence: true, uniqueness: { case_sensitive: false }
 
   def to_param
-    slug
+    "#{self.slug}"
+  end
+
+  def create_slug
+    self.slug = title.parameterize if !title.nil?
   end
 
 end
