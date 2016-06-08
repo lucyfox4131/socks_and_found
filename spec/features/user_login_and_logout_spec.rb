@@ -1,9 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "User Logs In and Logs Out" do
   context "Login tests" do
     scenario "existing user can login" do
-    user = User.create(name: "Charlie", username: "Charlie123", password: "password")
+    User.create(name: "Charlie", username: "Charlie123", password: "password")
     visit login_path
     fill_in "Username", with: "Charlie123"
     fill_in "Password", with: "password"
@@ -24,7 +24,7 @@ RSpec.feature "User Logs In and Logs Out" do
   end
 
     scenario "registered user cannot login with wrong password" do
-    user = User.create(name: "Charlie", username: "Charlie123",
+    User.create(name: "Charlie", username: "Charlie123",
                        password: "password")
 
     visit login_path
@@ -39,7 +39,7 @@ RSpec.feature "User Logs In and Logs Out" do
 
   context "logout test" do
     scenario "user is returned to login page" do
-    user = User.create(name: "Charlie", username: "Charlie123", password: "password")
+    User.create(name: "Charlie", username: "Charlie123", password: "password")
     visit login_path
     fill_in "Username", with: "Charlie123"
     fill_in "Password", with: "password"
