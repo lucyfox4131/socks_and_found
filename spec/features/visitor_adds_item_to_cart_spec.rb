@@ -13,14 +13,14 @@ RSpec.feature "Visit adds an item to cart" do
 
       expect(current_path).to eq("/cart")
 
-      within '#cart-sock' do
+      within '#cart-socks' do
         expect(page).to have_css("img[src=\"#{sock.image_url}\"]")
         expect(page).to have_content(sock.name)
         expect(page).to have_content(sock.price)
         expect(page).to have_content(sock.foot)
-        expect(page).to have_content(sock.category)
-        expect(page).to have_content(sock.size)
-        expect(page).to have_content(sock.style)
+        expect(page).to have_content(sock.category.title)
+        expect(page).to have_content(sock.size.value)
+        expect(page).to have_content(sock.style.name)
         expect(page).to have_content("Quantity: 1")
       end
 
