@@ -3,16 +3,16 @@ require "rails_helper"
 RSpec.feature "visitor creates an account" do
   context "with valid attributes" do
     scenario "visitor creates new account and is redirected" do
-      visit "/login"
-
+      visit login_path
       click_link "Create Account"
 
-      fill_in :name, with: "Bob"
-      fill_in :username, with: "username"
-      fill_in :password, with: "password"
-      click_on "Create New Account"
+      fill_in "Name", with: "Bob"
+      fill_in "Username", with: "Username"
+      fill_in "Password", with: "password"
+      fill_in "Password confirmation", with: "password"
+      click_on "Create Account"
 
-      expect(current_path).to eq("/dashbaord")
+      expect(current_path).to eq("/dashboard")
 
       within "nav" do
         expect(page).to have_content("Logged in as Bob")
