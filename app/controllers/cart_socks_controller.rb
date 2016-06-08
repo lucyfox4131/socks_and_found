@@ -9,6 +9,7 @@ class CartSocksController < ApplicationController
   end
 
   def show
+    @socks = @cart.socks
   end
 
 end

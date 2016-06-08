@@ -17,4 +17,15 @@ class Cart
   def count_of(sock_id)
     contents[sock_id.to_s]
   end
+
+#add a socks method to cart that returns all sock instances within the cart
+  def socks
+    contents.map {|sock_id, _quantity| Sock.find(sock_id)}
+  end
+
+  def total_price
+    socks.map do |sock|
+      count_of(sock.id) * sock.price.to_f
+    end.reduce(:+)
+  end
 end

@@ -1,4 +1,18 @@
-<div id="cart-sock">
+<div id="cart-socks">
   Quantity: <%= @cart.total %>
+  <% @socks.each do |sock| %>
+    <div class="row cart-sock">
+    <%= image_tag(sock.image_url, size: "100x250") %>
+    <%= sock.name %>
+    <%= sock.price %>
+    <%= sock.foot %>
+    <%= sock.category.title %>
+    <%= sock.size.value %>
+    <%= sock.style.name %>
+    </div>
+  <% end %>
+</div>
 
+<div id="total-cart-price">
+  <h4>Cart Total: $<%= @cart.total_price %></h4>
 </div>
