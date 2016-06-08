@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :socks, only: [:index, :show]
 
-  resources :cart_socks, only: [:create, :destroy]
+  resources :cart_socks, only: [:create, :destroy, :update]
 
   get '/cart', to: 'cart_socks#show'
 

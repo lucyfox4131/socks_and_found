@@ -19,4 +19,10 @@ class CartSocksController < ApplicationController
     flash[:success] = "Successfully removed #{link} from your cart."
     redirect_to "/cart"
   end
+
+  def update
+    sock = Sock.find(params[:id])
+    @cart.update_quantity(sock.id, params[:direction])
+    redirect_to "/cart"
+  end
 end

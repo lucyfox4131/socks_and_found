@@ -31,4 +31,18 @@ class Cart
   def remove_sock(sock_id)
     contents.delete_if { |id, _quantity| id == sock_id.to_s }
   end
+
+  def update_quantity(id, direction)
+    if direction == "plus"
+      contents[id.to_s] += 1
+    elsif direction == "minus" && one?(id)
+      remove_sock(id)
+    else
+      contents[id.to_s] -= 1
+    end
+  end
+
+  def one?(id)
+    contents[id.to_s] == 1
+  end
 end

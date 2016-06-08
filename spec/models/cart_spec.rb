@@ -36,4 +36,14 @@ RSpec.describe Cart, type: :model do
     cart.remove_sock(sock_3.id)
     expect(cart.contents).to eq( sock_1.id.to_s => 1, sock_2.id.to_s => 2 )
   end
+
+  scenario "can increase sock quantity" do
+  end
+
+  scenario "removes sock if quantity decreases from 1" do
+    sock = create(:sock)
+    cart = Cart.new(sock.id.to_s => 1)
+    cart.update_quantity(sock.id, "minus")
+    expect(cart.contents).to eq({})
+  end
 end
