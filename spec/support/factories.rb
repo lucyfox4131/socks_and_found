@@ -50,5 +50,4 @@ FactoryGirl.define do
     username "c123"
     password "password"
   end
-
 end

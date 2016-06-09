@@ -1,0 +1,9 @@
+<h1>Order Summary</h1>
+
+<h4>You have <%= @orders.count %> orders:</h4>
+
+<div id="one-order">
+  <% @orders.each do |order| %>
+    Order ID: <%= order.id %>
+  <% end %>
+</div>

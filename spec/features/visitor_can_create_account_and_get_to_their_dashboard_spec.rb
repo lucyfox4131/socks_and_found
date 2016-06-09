@@ -1,6 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "visitor creates an account" do
+  pending
   context "with valid attributes" do
     scenario "visitor creates new account and is redirected" do
       visit login_path
