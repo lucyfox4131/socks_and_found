@@ -32,14 +32,14 @@ RSpec.feature "visitor creates an account" do
 
       fill_in "Name", with: "Bob"
       fill_in "Username", with: "Username"
-      fill_in "Password", with: "password"
+      fill_in "Password", with: "Not_password"
       fill_in "Password confirmation", with: "Password"
       click_on "Create Account"
 
       expect(current_path).to eq(new_user_path)
 
-      expect(page).to_not have_content("Password confirmation doesn't match Passowrd")
-      expect(page).to have_content("Logout")
+      expect(page).to have_content("Password confirmation doesn't match Password")
+      expect(page).to_not have_content("Logout")
     end
   end
 end
