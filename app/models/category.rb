@@ -11,5 +11,4 @@ class Category < ActiveRecord::Base
   def create_slug
     self.slug = title.parameterize if !title.nil?
   end
-
 end
