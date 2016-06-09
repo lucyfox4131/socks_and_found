@@ -18,4 +18,12 @@ RSpec.feature "Logged in user sees orders" do
       expect(page).to have_content(order_3.id)
     end
   end
+
+  context "user is not logged in" do
+    scenario "user is sent to the login path" do
+      visit "/orders"
+      expect(page).to have_content("You must be logged in to view this page.")
+      expect(current_path).to eq(login_path)
+    end
+  end
 end

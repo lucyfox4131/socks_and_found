@@ -19,5 +19,4 @@ class SessionsController < ApplicationController
     flash[:notice] = "Goodbye!"
     redirect_to login_path
   end
-
 end
