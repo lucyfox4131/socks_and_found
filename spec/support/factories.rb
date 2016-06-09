@@ -45,4 +45,10 @@ FactoryGirl.define do
     n
   end
 
+  factory :user do
+    name "charlie"
+    username "c123"
+    password "password"
+  end
+
 end

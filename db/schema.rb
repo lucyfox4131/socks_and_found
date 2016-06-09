@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608014306) do
+ActiveRecord::Schema.define(version: 20160609001213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,26 @@ ActiveRecord::Schema.define(version: 20160608014306) do
     t.datetime "updated_at", null: false
     t.string   "slug"
   end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "sock_id"
+    t.integer  "order_id"
+    t.integer  "quantity"
+    t.decimal  "sock_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+  add_index "order_items", ["sock_id"], name: "index_order_items_on_sock_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "sizes", force: :cascade do |t|
     t.string   "value"
@@ -60,6 +80,9 @@ ActiveRecord::Schema.define(version: 20160608014306) do
     t.string  "password_confirmation"
   end
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "socks"
+  add_foreign_key "orders", "users"
   add_foreign_key "socks", "categories"
   add_foreign_key "socks", "sizes"
   add_foreign_key "socks", "styles"

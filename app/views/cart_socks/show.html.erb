@@ -20,3 +20,5 @@
 <div id="total-cart-price">
   <h4>Cart Total: <%= number_to_currency(@cart.total_price) %></h4>
 </div>
+
+<%= button_to "Login or Create Account to Checkout", "/login", method: :get %>
