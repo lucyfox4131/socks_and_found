@@ -16,9 +16,10 @@ RSpec.feature "visitor creates an account" do
 
       within "nav" do
         expect(page).to have_content("Logged in as Bob")
-        #expect page to have profile information!
       end
 
+      expect(page).to have_button("Orders")
+      expect(page).to have_content("So your dryer played you! You've come to the right place.")
       expect(page).to_not have_content("Login")
       expect(page).to have_content("Logout")
     end
