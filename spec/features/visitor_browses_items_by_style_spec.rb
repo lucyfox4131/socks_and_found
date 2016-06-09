@@ -8,7 +8,7 @@ RSpec.feature "visitor browses by style" do
     visit "/#{style}"
 
     within '.socks' do
-      expect(page).to have_content sock_1.name
+      expect(page).to have_link(sock_1.name, href: sock_path(sock_1))
       expect(page).to have_content sock_1.price
       expect(page).to have_css("img[src=\"#{sock_1.image_url}\"]")
 
