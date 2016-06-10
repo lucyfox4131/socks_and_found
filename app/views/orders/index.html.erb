@@ -4,6 +4,6 @@
 
 <div id="one-order">
   <% @orders.each do |order| %>
-    Order ID: <%= order.id %>
+    Order ID: <%= link_to "#{order.id}", order_path(order) %>
   <% end %>
 </div>
