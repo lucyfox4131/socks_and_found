@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :style do
-    name {generate(:style_name)}
+    name { generate(:style_name) }
   end
 
   sequence :style_name do |n|
@@ -46,8 +46,16 @@ FactoryGirl.define do
   end
 
   factory :user do
-    name "charlie"
-    username "c123"
+    name { generate(:name_of_user) }
+    username { generate(:username) }
     password "password"
+  end
+
+  sequence :username do |n|
+    "person#{n}"
+  end
+
+  sequence :name_of_user do |n|
+    "#{n}name"
   end
 end

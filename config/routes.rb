@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "home#show"
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :edit, :update]
 
   resources :socks, only: [:index, :show]
 
@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/dashboard", to: "users#show"
+
+  namespace :admin do
+    get "/dashboard", to: "users#show"
+  end
 
   get "/:id", to: "navigations#show"
 end
