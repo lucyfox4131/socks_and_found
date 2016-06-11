@@ -57,4 +57,13 @@ RSpec.describe Cart, type: :model do
     cart.update_quantity(sock.id, "minus")
     expect(cart.contents).to eq({})
   end
+
+  scenario "creates a new order" do
+    sock = create(:sock)
+    user = create(:user)
+    cart = Cart.new(sock.id.to_s => 1)
+    expect(Order.all.count).to eq(0)
+    cart.create_order(user)
+    expect(Order.all.count).to eq(1)
+  end
 end

@@ -7,7 +7,9 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:session][:username])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      if current_admin?
+      if @cart.contents.count > 0
+        redirect_to cart_path
+      elsif current_admin?
         redirect_to admin_dashboard_path
       else
         redirect_to dashboard_path

@@ -5,6 +5,19 @@ class OrdersController < ApplicationController
     @orders = current_user.orders
   end
 
+  def show
+    @order = current_user.orders.find(params[:id])
+    @order_items = @order.order_items
+  end
+
+  def create
+    order = @cart.create_order(current_user)
+    if order.create_order_items(@cart.contents)
+      flash[:success] = "Order was successfully placed"
+      redirect_to "/orders"
+    end
+  end
+
   private
 
   def require_login
@@ -13,4 +26,7 @@ class OrdersController < ApplicationController
       redirect_to login_path
     end
   end
+
+  # def order_params
+  # end
 end

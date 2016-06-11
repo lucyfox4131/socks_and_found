@@ -10,8 +10,8 @@ RSpec.feature "visitor creates account to checkout" do
 
       visit "/cart"
       expect(page).to_not have_button "Proceed to Checkout"
-      expect(page).to have_button "Login or Create Account to Checkout"
-      click_on "Login or Create Account to Checkout"
+      expect(page).to have_button "Login or Create Account to Purchase Socks"
+      click_on "Login or Create Account to Purchase Socks"
 
       click_on "Create Account"
       fill_in "Name", with: "Charlie"
