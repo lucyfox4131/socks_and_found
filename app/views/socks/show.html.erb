@@ -1,2 +1,6 @@
-<%= button_to "Add to Cart", cart_socks_path(sock_id: @sock.id) %>
+<% if @sock.retired %>
+  <%= "Item Retired" %>
+<% else %>
+  <%= button_to "Add to Cart", cart_socks_path(sock_id: @sock.id) %>
+<% end %>
 <%= button_to "View Cart", cart_path, method: :get %>
