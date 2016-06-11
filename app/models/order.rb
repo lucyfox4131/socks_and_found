@@ -13,6 +13,15 @@ class Order < ActiveRecord::Base
     order_items.map(&:quantity).reduce(:+)
   end
 
+  def create_order_items(cart_contents)
+    cart_contents.map do |sock_id, quantity|
+      OrderItem.create(order_id:    id,
+                       sock_id:     sock_id,
+                       quantity:    quantity,
+                       sock_price:  Sock.find(sock_id).price)
+    end
+  end
+
   def updated
     if status == "completed" || status == "cancelled"
       "This order was updated to the status of #{status} at
