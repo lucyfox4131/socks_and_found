@@ -1,1 +1,14 @@
 <h1><%= @order.id %></h1>
+<div id="order_item" class="row">
+  <%  @order_items.each do |order_item| %>
+      <%= link_to order_item.sock.name, sock_path(order_item.sock) %>
+      Price: <%= number_to_currency(order_item.sock_price * order_item.quantity) %>
+  <% end %>
+</div>
+<div id="order_details">
+    Total Order Price: <%= number_to_currency(@order.total_price) %>
+    Order Status: <%= @order.status %>
+    Order Placed on: <%= @order.created_at.strftime("%A, %B %d, %Y at %I:%M%p") %>
+    Total Socks: <%= @order.total_quantity %>
+    <%= @order.updated %>
+</div>
