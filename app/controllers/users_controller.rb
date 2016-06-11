@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def new
     @user = User.new
   end
@@ -10,8 +9,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to dashboard_path
     else
-      flash.now[:error] = @user.errors.full_messages.join(", ")
-      render :new
+      flash[:error] = @user.errors.full_messages.join(", ")
+      redirect_to new_user_path
     end
   end
 
@@ -23,9 +22,27 @@ class UsersController < ApplicationController
     end
   end
 
-private
-  def user_params
-    params.require(:user).permit(:name, :username, :password)
+  def edit
+    @user = current_user
   end
 
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      if current_admin?
+        redirect_to admin_dashboard_path
+      else
+        redirect_to dashboard_path
+      end
+    else
+      flash.now[:error] = @user.errors.full_messages.join(", ")
+      render :edit
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :username, :password, :password_confirmation)
+  end
 end

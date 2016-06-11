@@ -10,8 +10,6 @@ class Style < ActiveRecord::Base
   end
 
   def create_slug
-    # byebug
     self.slug = name.parameterize if !name.nil?
   end
-
 end

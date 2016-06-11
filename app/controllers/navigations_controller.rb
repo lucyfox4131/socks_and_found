@@ -5,7 +5,6 @@ class NavigationsController < ApplicationController
      category = Category.find_by_slug(params[:id])
      style = Style.find_by_slug(params[:id])
 
-    #  byebug
      if category
        @title = category.title
        @socks = category.socks

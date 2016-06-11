@@ -1,5 +1,6 @@
 class CartSocksController < ApplicationController
   include ActionView::Helpers::TextHelper
+
   def create
     sock = Sock.find(params[:sock_id])
     @cart.add_sock(sock.id)

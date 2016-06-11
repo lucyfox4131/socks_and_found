@@ -7,7 +7,11 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:session][:username])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to dashboard_path
+      if current_admin?
+        redirect_to admin_dashboard_path
+      else
+        redirect_to dashboard_path
+      end
     else
       flash.now[:error] = "Invalid login. Please try again."
       render :new
@@ -19,5 +23,4 @@ class SessionsController < ApplicationController
     flash[:notice] = "Goodbye!"
     redirect_to login_path
   end
-
 end
