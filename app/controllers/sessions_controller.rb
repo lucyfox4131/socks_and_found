@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.clear
+    session.delete(:user_id)
     flash[:notice] = "Goodbye!"
     redirect_to login_path
   end

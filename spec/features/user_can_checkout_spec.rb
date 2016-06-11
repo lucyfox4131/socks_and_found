@@ -22,6 +22,9 @@ RSpec.feature "User checks out" do
       expect(page).to have_content("Order was successfully placed")
       expect(current_path).to eq(orders_path)
       expect(page).to have_content(user.orders.first.id)
+      visit cart_path
+      expect(page).to_not have_content(sock_1.name)
+      expect(page).to_not have_content(sock_2.name)
     end
   end
 end
