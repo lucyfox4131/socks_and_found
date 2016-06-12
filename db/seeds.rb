@@ -23,7 +23,7 @@ style_5 = Style.create(name: "Ankle")
 style_6 = Style.create(name: "Pop Culture")
 style_7 = Style.create(name: "Party Time")
 
-socks = [{ name: "The Long Stick Middies", foot: "Left", price: 5.99, image_url: File.new("app/assets/images/long_stick_middies.jpg"), 
+socks = [{ name: "The Long Stick Middies", foot: "Left", price: 5.99, image_url: File.new("app/assets/images/long_stick_middies.jpg"),
   style_id: style_3.id, category_id: category_1.id, size_id: size_2.id },
          { name: "The Steph Currys", foot: "Right", price: 6.99, image_url: "http://i.ebayimg.com/00/s/NjI2WDM5MA==/z/1R8AAOSwHnFVs~WG/$_1.JPG", style_id: style_3.id, category_id: category_4.id, size_id: size_3.id },
          { name: "The Caviar Cliffords", foot: "Right", price: 9.99, image_url: "https://cdn1.boldsocks.com/wp-content/uploads/2015/03/2240870-20182.jpg", style_id: style_1.id, category_id: category_4.id, size_id: size_1.id },
@@ -37,6 +37,6 @@ socks = [{ name: "The Long Stick Middies", foot: "Left", price: 5.99, image_url:
          { name: "The Scrub a Dub Dubs", foot: "Right", price: 15.99, image_url: "https://s-media-cache-ak0.pinimg.com/236x/bc/b8/11/bcb8115b0d9bd316c5d496217b0eef1f.jpg", style_id: style_7.id, category_id: category_3.id, size_id: size_3.id },
          { name: "The Shoobies", foot: "Left", price: 15.99, image_url: "http://ecx.images-amazon.com/images/I/71JGm%2B2pUkL._SL1500_.jpg", style_id: style_7.id, category_id: category_4.id, size_id: size_2.id }]
 
-socks.each do |sock|
-  Sock.create(sock)
-end
+# socks.each do |sock|
+#   Sock.create(sock)
+# end

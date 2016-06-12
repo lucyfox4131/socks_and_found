@@ -1,5 +1,5 @@
 <h2>Create New Sock</h2>
-<%= form_for([:admin, @sock]) do |f| %>
+<%= form_for([:admin, @sock], multipart: true) do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %><br>
 <%= f.label :price %>
