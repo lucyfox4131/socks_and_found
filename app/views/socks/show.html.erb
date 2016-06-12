@@ -1,5 +1,5 @@
 <h2><%= @sock.name %></h2>
-<%= image_tag @sock.image_url, size: "250x400" %>
+<%= image_tag @sock.image_url.url(:medium) %>
 <%= @sock.price %>
 <% if @sock.retired %>
   <%= "Item Retired" %>

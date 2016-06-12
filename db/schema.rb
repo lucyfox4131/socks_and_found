@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611203433) do
+ActiveRecord::Schema.define(version: 20160612180624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,13 +54,16 @@ ActiveRecord::Schema.define(version: 20160611203433) do
     t.string   "name"
     t.string   "foot"
     t.decimal  "price"
-    t.string   "image_url"
     t.integer  "style_id"
     t.integer  "category_id"
     t.integer  "size_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "retired",     default: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "retired",                default: false
+    t.string   "image_url_file_name"
+    t.string   "image_url_content_type"
+    t.integer  "image_url_file_size"
+    t.datetime "image_url_updated_at"
   end
 
   add_index "socks", ["category_id"], name: "index_socks_on_category_id", using: :btree

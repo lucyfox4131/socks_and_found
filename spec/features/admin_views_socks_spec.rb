@@ -18,7 +18,7 @@ RSpec.feature "Admin can see all items" do
     expect(current_path).to eq("/admin/socks")
     within "#sock-table" do
       expect(page).to have_content(sock_1.name)
-      expect(page).to have_css("img[src=\"#{sock_2.image_url}\"]")
+      expect(page).to have_css("img[src=\"#{sock_2.image_url.url(:thumb)}\"]")
       expect(page).to have_content(sock_3.name)
       expect(page).to have_content("#{sock_3.name} is retired")
       expect(page).to have_link("Edit")

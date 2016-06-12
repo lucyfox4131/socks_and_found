@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "/dashboard", to: "users#show"
-    resources :socks, only: [:index, :edit, :delete, :show]
+    resources :socks, only: [:index, :edit, :delete, :show, :new, :create]
   end
 
   get "/:id", to: "navigations#show"
