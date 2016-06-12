@@ -27,7 +27,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 gem 'unicorn'
-
+gem 'paperclip', "~> 5.0.0.beta1"
+gem 'figaro'
+gem 'aws-sdk', '< 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -41,9 +43,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'pry'
-  gem 'paperclip', "~> 5.0.0.beta1"
-  gem 'figaro'
-  gem 'aws-sdk', '< 2.0'
 end
 
 group :development do
