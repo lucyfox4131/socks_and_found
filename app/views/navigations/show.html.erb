@@ -3,7 +3,7 @@
 <div class="container socks">
   <% @socks.each do |sock| %>
     <div class="one-sock col-md-4">
-      <%= image_tag sock.image_url, size: "250x400" %>
+      <%= image_tag sock.image_url.url(:medium) %>
       <h4><%= link_to sock.name, sock_path(sock) %></h4>
       $<%= sock.price %>
     </div>
