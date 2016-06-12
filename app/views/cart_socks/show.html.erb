@@ -1,7 +1,7 @@
 <div class="container" id="cart-socks">
   <% @socks.each do |sock| %>
     <div class="row cart-sock">
-    <%= image_tag(sock.image_url, size: "100x250") %>
+    <%= image_tag sock.image_url.url(:thumb) %>
     <%= sock.name %>
     <%= sock.price %>
     <%= sock.foot %>

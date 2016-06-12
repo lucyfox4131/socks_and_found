@@ -1,0 +1,20 @@
+<table id="sock-table">
+  <tr>
+    <th>Sock Name</th>
+    <th>Sock Descriptors</th>
+    <th>Price</th>
+    <th>Status</th>
+    <th>Image</th>
+    <th>Actions</th>
+  </tr>
+  <% @socks.each do |sock| %>
+    <tr>
+    <td><%= sock.name %></td>
+    <td><%= "#{sock.category.title}, #{sock.foot}, #{sock.style.name}, #{sock.size.value}" %></td>
+    <td><%= number_to_currency(sock.price) %></td>
+    <td><%= sock.status %></td>
+    <td><%= image_tag sock.image_url.url(:thumb) %></td>
+    <td><%= link_to "Edit", edit_admin_sock_path(sock) %> <%= link_to "Delete", admin_sock_path(sock), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>

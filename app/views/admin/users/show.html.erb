@@ -1,2 +1,4 @@
 <h1>Admin Dashboard</h1>
 <%= button_to "Edit Account Info", edit_user_path(@admin), method: :get %>
+<%= button_to "View All Socks", admin_socks_path, method: :get %>
+<%= button_to "Add New Sock", new_admin_sock_path, method: :get %>
