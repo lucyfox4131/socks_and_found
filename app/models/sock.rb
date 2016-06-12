@@ -1,5 +1,4 @@
 class Sock < ActiveRecord::Base
-
   belongs_to :style
   belongs_to :category
   belongs_to :size
@@ -23,12 +22,22 @@ class Sock < ActiveRecord::Base
   end
 
   def self.new_sock(sock_params)
-    Sock.new(name: sock_params[:name],
-              price: sock_params[:price],
-              foot: sock_params[:foot],
-              image_url: sock_params[:image_url],
-              style_id: Style.find_by(name: sock_params[:style]).id,
-              category_id: Category.find_by(title: sock_params[:category]).id,
-              size_id: Size.find_by(value: sock_params[:size]).id)
+    Sock.new(name:          sock_params[:name],
+              price:        sock_params[:price],
+              foot:         sock_params[:foot],
+              image_url:    sock_params[:image_url],
+              style_id:     Style.find_by(name: sock_params[:style]).id,
+              category_id:  Category.find_by(title: sock_params[:category]).id,
+              size_id:      Size.find_by(value: sock_params[:size]).id)
+  end
+
+  def update_sock(sock_params)
+    update(name:          sock_params[:name],
+            price:        sock_params[:price],
+            foot:         sock_params[:foot],
+            image_url:    sock_params[:image_url],
+            style_id:     Style.find_by(name: sock_params[:style]).id,
+            category_id:  Category.find_by(title: sock_params[:category]).id,
+            size_id:      Size.find_by(value: sock_params[:size]).id)
   end
 end

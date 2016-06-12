@@ -23,7 +23,8 @@ style_5 = Style.create(name: "Ankle")
 style_6 = Style.create(name: "Pop Culture")
 style_7 = Style.create(name: "Party Time")
 
-socks = [{ name: "The Long Stick Middies", foot: "Left", price: 5.99, image_url: File.new("app/assets/images/long_stick_middies.jpg"), style_id: style_3.id, category_id: category_1.id, size_id: size_2.id },
+socks = [{ name: "The Long Stick Middies", foot: "Left", price: 5.99, image_url: File.new("app/assets/images/long_stick_middies.jpg"), 
+  style_id: style_3.id, category_id: category_1.id, size_id: size_2.id },
          { name: "The Steph Currys", foot: "Right", price: 6.99, image_url: "http://i.ebayimg.com/00/s/NjI2WDM5MA==/z/1R8AAOSwHnFVs~WG/$_1.JPG", style_id: style_3.id, category_id: category_4.id, size_id: size_3.id },
          { name: "The Caviar Cliffords", foot: "Right", price: 9.99, image_url: "https://cdn1.boldsocks.com/wp-content/uploads/2015/03/2240870-20182.jpg", style_id: style_1.id, category_id: category_4.id, size_id: size_1.id },
          { name: "The One Man Wolf Packs", foot: "Left", price: 9.99, image_url: "http://ep.yimg.com/ay/beltoutlet/windsor-collection-men-s-mid-calf-merino-wool-dress-socks-40.gif", style_id: style_1.id, category_id: category_1.id, size_id: size_2.id },

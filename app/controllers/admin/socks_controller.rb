@@ -13,11 +13,25 @@ class Admin::SocksController < Admin::BaseController
       flash[:success] = "Successfully created new sock!"
       redirect_to admin_socks_path
     else
-      flash.now[:error] #whatever error message goes here
+      flash.now[:error] = @sock.errors.full_messages.join(", ")
       render :new
     end
   end
 
+  def edit
+    @sock = Sock.find(params[:id])
+  end
+
+  def update
+    @sock = Sock.find(params[:id])
+    if @sock.update_sock(sock_params)
+      flash[:success] = "Successfully updated sock!"
+      redirect_to admin_socks_path
+    else
+      flash.now[:error] = @sock.errors.full_messages.join(", ")
+      render :edit
+    end
+  end
   private
 
   def sock_params
