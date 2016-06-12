@@ -12,4 +12,15 @@ RSpec.feature "Visitor views all socks" do
       expect(page).to have_css("img[src=\"#{sock_3.image_url}\"]")
     end
   end
+
+  scenario "they can view one sock" do
+    sock = create(:sock)
+    visit sock_path(sock)
+    expect(page).to have_content sock.name
+    expect(page).to have_content sock.price
+    expect(page).to have_css("img[src=\"#{sock.image_url}\"]")
+    expect(page).to have_button("Add to Cart")
+    expect(page).to have_button("View Cart")
+    expect(page).to have_button("Back to All Socks")
+  end
 end
