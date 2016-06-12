@@ -10,4 +10,12 @@ class Sock < ActiveRecord::Base
   validates :style_id, presence: true
   validates :category_id, presence: true
   validates :size_id, presence: true
+
+  def status
+    if retired
+      "#{name.capitalize} is retired"
+    else
+      "#{name.capitalize} is currently available for purchase"
+    end
+  end
 end
