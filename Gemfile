@@ -27,9 +27,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 gem 'unicorn'
-gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip'
+gem 'paperclip'
 gem 'figaro'
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
