@@ -32,12 +32,10 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update(user_params)
-      if current_admin?
-        redirect_to admin_dashboard_path
-      else
-        redirect_to dashboard_path
-      end
+    if @user.update(user_params) && @user.admin?
+      redirect_to admin_dashboard_path
+    elsif @user.update(user_params)
+      redirect_to dashboard_path
     else
       flash.now[:error] = @user.errors.full_messages.join(", ")
       render :edit
