@@ -35,6 +35,6 @@ class Admin::SocksController < Admin::BaseController
   private
 
   def sock_params
-    params.require(:sock).permit(:name, :price, :foot, :style, :category, :size, :image_url)
+    params.require(:sock).permit(:name, :price, :image_url, :foot, :style, :category, :size)
   end
 end
