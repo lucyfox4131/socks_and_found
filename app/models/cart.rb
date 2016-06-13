@@ -28,10 +28,6 @@ class Cart
     end.reduce(:+)
   end
 
-  def create_order(current_user)
-    current_user.orders.create(status: "ordered")
-  end
-
   def remove_sock(sock_id)
     contents.delete_if { |id, _quantity| id == sock_id.to_s }
   end
