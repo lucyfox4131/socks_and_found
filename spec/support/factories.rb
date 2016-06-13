@@ -49,6 +49,7 @@ FactoryGirl.define do
     name { generate(:name_of_user) }
     username { generate(:username) }
     password "password"
+    password_confirmation "password"
   end
 
   sequence :username do |n|

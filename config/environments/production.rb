@@ -86,4 +86,7 @@ Rails.application.configure do
     s3_region: ENV['AWS_REGION'],
     }
   }
+
+  # config.twitter_key = "TWITTER_CONSUMER_KEY"
+  # config.twitter_secret = "TWITTER_CONSUMER_SECRET"
 end

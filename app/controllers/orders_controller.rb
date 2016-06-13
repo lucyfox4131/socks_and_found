@@ -11,12 +11,11 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = @cart.create_order(current_user)
-    if order.create_order_items(@cart.contents)
-      session.delete(:cart)
-      flash[:success] = "Order was successfully placed"
-      redirect_to "/orders"
-    end
+    order = Order.create(user_id: current_user.id, status: "ordered")
+    order.create_order_items(@cart.contents)
+    session.delete(:cart)
+    flash[:success] = "Order was successfully placed"
+    redirect_to "/orders"
   end
 
   private
