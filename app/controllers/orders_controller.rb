@@ -26,7 +26,4 @@ class OrdersController < ApplicationController
       redirect_to login_path
     end
   end
-
-  # def order_params
-  # end
 end
