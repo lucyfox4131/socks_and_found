@@ -1,6 +1,6 @@
 <p>
   <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
-    <%= f.text_field :message, placeholder: "I'm loving shopping at Socks and Found!" %>
+    <%= f.text_area :message, placeholder: "I'm loving shopping at Socks and Found!" %>
     <%= f.submit "Send Tweet" %>
   <% end %>
 </p>

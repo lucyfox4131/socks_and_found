@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :show, :create]
 
   resources :tweets, only: [:new, :create]
-  
+
   get "/cart", to: "cart_socks#show"
 
   get "/login", to: "sessions#new"

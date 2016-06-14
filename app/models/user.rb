@@ -24,8 +24,9 @@ class User < ActiveRecord::Base
       config.consumer_key        = Rails.application.config.twitter_key
       config.consumer_secret     = Rails.application.config.twitter_secret
       config.access_token        = oauth_token
-      config.access_token_secret = oauth_secret
+      config.access_token_secret = oauth_token_secret
     end
+    # binding.pry
     client.update(tweet)
   end
 end
