@@ -1,13 +1,3 @@
 <h2>So you lost a sock, huh? You came to the right place. Sign up below!</h2>
 
-<%= form_for(@user) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Create Account" %>
-<% end %>
+<%= render partial: "form", locals: {button: "Create Account"}%>

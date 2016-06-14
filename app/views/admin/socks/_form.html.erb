@@ -1,0 +1,17 @@
+<%= form_for(sock) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :price %>
+  <%= f.text_field :price %><br>
+  <%= f.label :image_url %>
+  <%= f.file_field :image_url %><br>
+  <%= f.label :foot %>
+  <%= f.select :foot, ["Left", "Right"]%><br>
+  <%= f.label :style %>
+  <%= f.select :style, ["Dress", "Athletic", "Mid Calf", "Wool", "Ankle", "Pop Culture", "Party Time"] %><br>
+  <%= f.label :category %>
+  <%= f.select :category, ["Men", "Women", "Kids", "Unisex"] %><br>
+  <%= f.label :size %>
+  <%= f.select :size, ["Small", "Medium", "Large"] %><br>
+  <%= f.submit %>
+<% end %>

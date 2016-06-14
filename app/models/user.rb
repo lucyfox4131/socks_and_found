@@ -8,6 +8,14 @@ class User < ActiveRecord::Base
 
   enum role: %w(default admin)
 
+  def self.display_name(current_user)
+    if current_user
+      name.capitalize
+    else
+      "to Socks and Found"
+    end
+  end
+
   def self.from_omniauth(auth_info)
     user = find_or_create_by(uid: auth_info[:uid]) do |new_user|
       new_user.uid = auth_info.uid
@@ -26,7 +34,6 @@ class User < ActiveRecord::Base
       config.access_token        = oauth_token
       config.access_token_secret = oauth_token_secret
     end
-    # binding.pry
     client.update(tweet)
   end
 end
