@@ -28,8 +28,10 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
 gem 'unicorn'
 gem 'paperclip', "~> 5.0.0.beta1"
-gem 'figaro'
 gem 'aws-sdk', '>= 2.0.34'
+gem 'figaro'
+gem 'twitter', '~> 5.3.1'
+gem 'omniauth-twitter'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index, :show, :create]
 
+  resources :tweets, only: [:new, :create]
 
   get "/cart", to: "cart_socks#show"
 
@@ -17,6 +18,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/dashboard", to: "users#show"
+
+  get "/auth/twitter", as: :twitter_login
+  get "/auth/twitter/callback", to: "sessions#create"
 
   namespace :admin do
     get "/dashboard", to: "users#show"

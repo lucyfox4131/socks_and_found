@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
   def set_cart
     @cart = Cart.new(session[:cart])
   end
+
+  def current_twitter_user
+    current_user && current_user.uid
+  end
 end
