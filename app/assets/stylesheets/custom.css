@@ -2,6 +2,9 @@
   color: green;
 }
 
+body {
+  background-color: rgba(123, 119, 108, 0.5);
+}
 .btn-custom {
   background-color: rgb(176, 224, 236);
 }
@@ -20,4 +23,8 @@
 
 .yellow {
   color: rgb(248, 238, 100);
+}
+
+.one-sock {
+  padding-bottom: 10px;
 }

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def show
-    @name = current_user.name.capitalize unless !current_user
+    @name = User.display_name(current_user)
   end
 end

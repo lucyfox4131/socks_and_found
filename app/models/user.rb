@@ -7,4 +7,12 @@ class User < ActiveRecord::Base
   validates :password, presence: true
 
   enum role: %w(default admin)
+
+  def self.display_name(current_user)
+    if current_user
+      name.capitalize
+    else
+      "to Socks and Found"
+    end
+  end
 end
