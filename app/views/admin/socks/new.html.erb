@@ -1,2 +1,2 @@
 <h2>Create New Sock</h2>
-<%= render partial: "form", locals: { sock: @sock, url: admin_socks_path, html: { multipart: true }} %>
+<%= render partial: "form", locals: { sock: [:admin, @sock], html: { multipart: true }} %>
