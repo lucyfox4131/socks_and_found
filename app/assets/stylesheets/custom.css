@@ -1,3 +1,23 @@
 #flash_success {
   color: green;
 }
+
+.btn-custom {
+  background-color: rgb(176, 224, 236);
+}
+
+.green-theme {
+  color: rgb(108,187,76);
+}
+
+.blue {
+  color: rgb(176, 224, 236);
+}
+
+.red {
+  color: rgb(237, 74, 78);
+}
+
+.yellow {
+  color: rgb(248, 238, 100);
+}
