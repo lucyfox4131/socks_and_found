@@ -21,16 +21,8 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right" id="navbar-links">
-          <% if current_user %>
-            <% if current_admin? %>
-            <li><%= link_to "Logged in as #{current_user.name}!", admin_dashboard_path %></li>
-            <% else %>
-            <li><%= link_to "Logged in as #{current_user.name}!", dashboard_path %></li>
-            <% end %>
-            <li><%= link_to "Logout", logout_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Login", login_path %></li>
-            <li><%= link_to "Login with Twitter", twitter_login_path %></li>
+          <% user_button_display.each do |button| %>
+            <li><%= button %></li>
           <% end %>
           <li><a href="/socks">All Socks</a></li>
           <li class="dropdown">
