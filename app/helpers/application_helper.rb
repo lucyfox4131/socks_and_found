@@ -26,4 +26,12 @@ module ApplicationHelper
       link_to("Logged in as #{current_user.name}", dashboard_path)
     end
   end
+
+  def categories
+    Category.all
+  end
+
+  def styles
+    Style.all
+  end
 end
