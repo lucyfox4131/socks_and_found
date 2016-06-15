@@ -3,7 +3,7 @@
   <div class="one-sock col-md-4">
     <%= image_tag sock.image_url.url(:medium), size: "250x300" %>
     <h4 class="sock-label"><%= link_to sock.name, sock_path(sock) %></h4>
-     $<%= sock.price %>, <%= sock.foot %>
+     <%= number_to_currency(sock.price) %>, <%= sock.foot %>
   </div>
   <% end %>
 </div>
