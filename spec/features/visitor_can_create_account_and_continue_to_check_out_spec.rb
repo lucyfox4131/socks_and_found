@@ -12,8 +12,8 @@ RSpec.feature "visitor creates account to checkout" do
       expect(page).to_not have_button "Proceed to Checkout"
       expect(page).to have_button "Login or Create Account to Purchase Socks"
       click_on "Login or Create Account to Purchase Socks"
-
-      click_on "Create Account"
+      
+      click_button "Create Account"
       fill_in "Name", with: "Charlie"
       fill_in "Username", with: "c123"
       fill_in "Password", with: "password"

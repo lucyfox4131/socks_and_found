@@ -12,6 +12,6 @@ RSpec.feature "visitor sees login and new account links" do
     expect(page).to have_content("Username")
     expect(page).to have_content("Password")
 
-    expect(page).to have_link("Create Account")
+    expect(page).to have_button("Create Account")
   end
 end

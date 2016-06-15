@@ -14,7 +14,7 @@
         <%= button_to "Login With Twitter", twitter_login_path, :class => "twitter-button" %>
     </div>
 
-    <div class="col-md-4 col-sm-12 create-account">
-      <h2><%= link_to "Create Account", new_user_path %></h2>
+    <div class="col-md-4 col-sm-12">
+      <%= button_to "Create Account", new_user_path, method: :get, :class => "twitter-button" %>
     </div>
 </div>
