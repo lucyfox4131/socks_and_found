@@ -1,12 +1,20 @@
-<h2>Login</h2>
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "Login" %>
-<% end %>
+<div class="login-box row">
+    <div class="col-md-4 col-sm-12 login-title">
+      <h2 class="login-title" >Login</h2>
+      <%= form_for(:session, url: login_path) do |f| %>
+      <span class="username"><%= f.label :username %></span>
+      <%= f.text_field :username %><br>
+      <span class="password"><%= f.label :password %></span>
+      <%= f.password_field :password %><br>
+      <%= f.submit "Login", :class => "btn btn-custom"%>
+      <% end %>
+    </div>
 
-<h2>Or</h2><%= link_to "Login with Twitter", twitter_login_path %><br>
-<h2>Or</h2>
-<h2><%= link_to "Create Account", new_user_path %></h2>
+    <div class="col-md-4 col-sm-12">
+        <%= button_to "Login With Twitter", twitter_login_path, :class => "twitter-button" %>
+    </div>
+
+    <div class="col-md-4 col-sm-12 create-account">
+      <h2><%= link_to "Create Account", new_user_path %></h2>
+    </div>
+</div>

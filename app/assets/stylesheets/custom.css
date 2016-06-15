@@ -7,6 +7,7 @@ body {
 }
 .btn-custom {
   background-color: rgb(176, 224, 236);
+  margin-top: 5px;
 }
 
 .green-theme {
@@ -57,6 +58,54 @@ body {
   font: normal 30px/1 "Nova Flat", Helvetica, sans-serif;
   color: rgba(3,67,84,1);
   text-align: center;
-  letter-spacing: 2px;
   white-space: nowrap;
+}
+
+.login-box {
+  color: rgba(3,67,84,1);
+  right: initial;
+  background-color: transparent;
+  margin: 6% auto;
+  width: 70%px;
+  max-width: 70%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 25px;
+}
+
+.twitter-button {
+  margin-top: 50px;
+  display: inline-block;
+  padding: 0 30px 0 30px;
+  border: none;
+  font: normal 20px/2.4 "Open Sans", Helvetica, sans-serif;
+  color: rgba(255,255,255,0.9);
+  text-transform: capitalize;
+  background: rgb(105,192,223);
+  box-shadow: 0 5px 0 0 rgb(87,151,180) ;
+  text-shadow: 0 1px 1px rgba(87,151,180,0.36) ;
+}
+
+.twitter-button:hover {
+  background: rgba(78,182,216,1);
+  box-shadow: 0 5px 0 0 rgba(78,136,160,1) ;
+}
+
+.create-account {
+  color: color: rgba(3,67,84,1);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.login-title {
+  text-align: center;
+}
+
+.username {
+  padding-right: 3px;
+}
+
+.password {
+  padding-right: 6px;
 }
