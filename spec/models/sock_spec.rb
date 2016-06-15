@@ -13,4 +13,14 @@ RSpec.describe Sock, type: :model do
   context "validations, uniqueness" do
     it { should validate_uniqueness_of(:name) }
   end
+
+  scenario "status returns available when not retired" do
+    sock = create(:sock)
+    expect(sock.status).to eq("#{sock.name} is currently available for purchase")
+  end
+
+  scenario "status returns retired when retired" do
+    sock = Sock.new(name: "test", style_id: 1, foot: "left", category_id: 1, size_id: 1, price: 5.00, retired: true)
+    expect(sock.status).to eq("#{sock.name.capitalize} is retired")
+  end
 end
