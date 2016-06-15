@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: rgba(123, 119, 108, 0.5);
+  background-color: rgba(123, 119, 108, 0.3);
 }
 .btn-custom {
   background-color: rgb(176, 224, 236);
@@ -25,6 +25,38 @@ body {
   color: rgb(248, 238, 100);
 }
 
-.one-sock {
-  padding-bottom: 10px;
+#sock-index-info {
+  text-align: center;
+}
+
+#sock-index-image {
+  border-radius: 6px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.category-style-descriptor {
+  text-align: center;
+}
+
+#labels {
+  color: rgba(3,67,84,1);
+  font: normal 63px/1 "Nova Flat", Helvetica, sans-serif;
+}
+
+#navbar-links {
+  padding-top:  8px;
+  color: rgba(3,67,84,1);
+}
+
+#logo {
+  margin-left: 2px;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  border: none;
+  font: normal 30px/1 "Nova Flat", Helvetica, sans-serif;
+  color: rgba(3,67,84,1);
+  text-align: center;
+  letter-spacing: 2px;
+  white-space: nowrap;
 }

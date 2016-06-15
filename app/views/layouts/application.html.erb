@@ -10,7 +10,6 @@
 <body>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -18,17 +17,21 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Socks And Found</a>
+        <a class="navbar-brand" id="logo" href="/">Socks And Found</a>
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><% if current_user %>
-            Logged in as <%= current_user.name %>!
-            <%= link_to "Logout", logout_path, method: :delete %>
+        <ul class="nav navbar-nav navbar-right" id="navbar-links">
+          <% if current_user %>
+            <% if current_admin? %>
+            <li><%= link_to "Logged in as #{current_user.name}!", admin_dashboard_path %></li>
+            <% else %>
+            <li><%= link_to "Logged in as #{current_user.name}!", dashboard_path %></li>
+            <% end %>
+            <li><%= link_to "Logout", logout_path, method: :delete %></li>
           <% else %>
-            <%= link_to "Login", login_path %>
-          <% end %></li>
+            <li><%= link_to "Login", login_path %></li>
+            <li><%= link_to "Login with Twitter", twitter_login_path %></li>
+          <% end %>
           <li><a href="/socks">All Socks</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
@@ -47,13 +50,14 @@
             </ul>
           </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-
-      <% flash.each do |name, message| %>
-        <%= content_tag :div, raw(message), id: "flash_#{name}" %>
-      <% end %>
+      </div>
+    </div>
   </nav>
+  <div class="flash">
+    <% flash.each do |name, message| %>
+    <%= content_tag :div, raw(message), id: "flash_#{name}" %>
+    <% end %>
+  </div>
 <%= yield %>
 
 </body>
