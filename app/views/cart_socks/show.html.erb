@@ -23,5 +23,5 @@
 <% if !current_user %>
   <%= button_to "Login or Create Account to Purchase Socks", login_path(previous_page: "cart" ), method: :get %>
 <% else %>
-  <%= button_to "Checkout", orders_path %>
+  <%= button_to "Checkout", new_charge_path, method: :get %>
   <% end %>

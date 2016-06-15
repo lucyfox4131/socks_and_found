@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :tweets, only: [:new, :create]
 
+  resources :charges, only: [:new, :create]
+
   get "/cart", to: "cart_socks#show"
 
   get "/login", to: "sessions#new"

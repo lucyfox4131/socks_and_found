@@ -32,6 +32,7 @@ gem 'aws-sdk', '>= 2.0.34'
 gem 'figaro'
 gem 'twitter', '~> 5.3.1'
 gem 'omniauth-twitter'
+gem 'stripe'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
