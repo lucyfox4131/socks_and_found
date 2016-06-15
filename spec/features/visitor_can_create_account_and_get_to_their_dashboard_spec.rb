@@ -19,7 +19,7 @@ RSpec.feature "visitor creates an account" do
       end
 
       expect(page).to have_button("Orders")
-      expect(page).to have_content("So your dryer played you! You've come to the right place.")
+      expect(page).to have_content("So your dryer played you... Bob, you've come to the right place.")
       expect(page).to_not have_content("Login")
       expect(page).to have_content("Logout")
     end

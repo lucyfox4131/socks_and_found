@@ -77,7 +77,7 @@ body:after {
 }
 
 #labels {
-  color: rgba(3,67,84,1);
+  color: rgb(3,67,84);
   font: normal 63px/1 "Nova Flat", Helvetica, sans-serif;
 }
 
@@ -130,7 +130,7 @@ body:after {
 }
 
 .create-account {
-  color: color: rgba(3,67,84,1);
+  color: rgba(3,67,84,1);
   text-align: center;
   margin-top: 40px;
 }
@@ -207,4 +207,19 @@ body:after {
   width: 50%;
   height: 150px;
   overflow: hidden;
+}
+
+.quantity-button {
+  display: flex;
+  justify-content: center;
+  margin: 4px;
+}
+
+#total-cart-price {
+  text-align: center;
+  padding: 10px;
+}
+
+.cart-sock {
+  text-align: center;
 }
