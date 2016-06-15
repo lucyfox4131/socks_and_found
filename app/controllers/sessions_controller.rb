@@ -6,25 +6,12 @@ class SessionsController < ApplicationController
   def create
     if params[:commit]
       @user = User.find_by(username: params[:session][:username])
-      if @user && @user.authenticate(params[:session][:password])
-        session[:user_id] = @user.id
-        if @cart.contents.count > 0
-          redirect_to cart_path
-        elsif current_admin?
-          redirect_to admin_dashboard_path
-        else
-          redirect_to dashboard_path
-        end
-      else
-        flash.now[:error] = "Invalid login. Please try again."
-        render :new
-      end
+      route_guest_or_user
     elsif @user = User.from_omniauth(request.env["omniauth.auth"])
       session[:user_id] = @user.id
       redirect_to dashboard_path
     else
-      flash.now[:error] = "Invalid login. Please try again."
-      render :new
+      invalid_login
     end
   end
 
@@ -32,5 +19,14 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     flash[:notice] = "Goodbye!"
     redirect_to login_path
+  end
+
+  def route_guest_or_user
+    if @user && @user.authenticate(params[:session][:password])
+      session[:user_id] = @user.id
+      route_by_user_role
+    else
+      invalid_login
+    end
   end
 end
