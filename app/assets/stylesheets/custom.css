@@ -1,12 +1,49 @@
 #flash_success {
-  color: green;
+  background-color: rgba(108,187,76, 0.8);
+  color: white;
+  text-align: center;
+  width: 320px;
+  position: absolute;
+}
+
+#flash_notice {
+  background-color: rgb(248, 238, 100);
+  color: white;
+  text-align: center;
+  width: 320px;
+  position: absolute;
+}
+
+#flash_error {
+  background-color: rgb(237, 74, 78);
+  color: white;
+  text-align: center;
+  width: 320px;
+  position: absolute;
 }
 
 body {
-  background-color: rgba(123, 119, 108, 0.5);
+  position: relative;
 }
+
+body:after {
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('colorful_socks.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  background-position: 70% center;
+  opacity : 0.2;
+  z-index: -1;
+}
+
 .btn-custom {
   background-color: rgb(176, 224, 236);
+  margin-top: 5px;
 }
 
 .green-theme {
@@ -25,6 +62,177 @@ body {
   color: rgb(248, 238, 100);
 }
 
-.one-sock {
-  padding-bottom: 10px;
+#sock-index-info {
+  text-align: center;
+}
+
+#sock-index-image {
+  border-radius: 6px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.category-style-descriptor {
+  text-align: center;
+}
+
+#labels {
+  color: rgb(3,67,84);
+  font: normal 63px/1 "Nova Flat", Helvetica, sans-serif;
+}
+
+#navbar-links {
+  padding-top:  8px;
+  color: rgba(3,67,84,1);
+}
+
+#logo {
+  margin-left: 2px;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  border: none;
+  font: normal 30px/1 "Nova Flat", Helvetica, sans-serif;
+  color: rgba(3,67,84,1);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.login-box {
+  color: rgba(3,67,84,1);
+  right: initial;
+  background-color: transparent;
+  margin: 6% auto;
+  width: 70%px;
+  max-width: 70%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 25px;
+}
+
+.twitter-button {
+  align-self: center;
+  margin-top: 50px;
+  display: inline-block;
+  padding: 0 30px 0 30px;
+  border: none;
+  font: normal 20px/2.4 "Open Sans", Helvetica, sans-serif;
+  color: rgba(255,255,255,0.9);
+  text-transform: capitalize;
+  background: rgb(105,192,223);
+  box-shadow: 0 5px 0 0 rgb(87,151,180) ;
+  text-shadow: 0 1px 1px rgba(87,151,180,0.36) ;
+}
+
+.twitter-button:hover {
+  background: rgba(78,182,216,1);
+  box-shadow: 0 5px 0 0 rgba(78,136,160,1) ;
+}
+
+.create-account {
+  color: rgba(3,67,84,1);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.login-title {
+  text-align: center;
+}
+
+.username {
+  padding-right: 4px;
+}
+
+.password {
+  padding-right: 6px;
+}
+
+.dashboard-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-person {
+  border: 1px solid rgba(3,67,84,1);
+  margin: 2px;
+}
+
+.dashboard-header {
+  text-align: center;
+}
+
+.form-box {
+  color: rgba(3,67,84,1);
+  right: initial;
+  background-color: transparent;
+  margin: 6% auto;
+  max-width: 30%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 25px;
+}
+
+.form-field-name {
+  padding-left: 149px;
+}
+.form-field-username {
+  padding-left: 112px;
+}
+.form-field-password {
+  padding-left:  115px;
+}
+
+/* Carousel base class */
+.carousel {
+  height:100%;
+  width: 100%;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  min-height: 500px;
+  /*background-color: #777;*/
+}
+
+.carousel-inner > .item > img {
+  margin: 0 auto;
+}
+
+.carousel-img {
+  width: 50%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.quantity-button {
+  display: flex;
+  justify-content: center;
+  margin: 4px;
+}
+
+#total-cart-price {
+  text-align: center;
+  padding: 10px;
+}
+
+.cart-sock {
+  text-align: center;
+}
+
+.table {
+  background-color: rgba(255,255,255,0.4)
+}
+
+.img-responsive {
+  height: 100px;
+  width: 80px;
+}
+
+.price {
+  font-size: 26px;
 }

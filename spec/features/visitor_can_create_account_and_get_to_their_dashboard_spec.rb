@@ -4,7 +4,7 @@ RSpec.feature "visitor creates an account" do
   context "with valid attributes" do
     scenario "visitor creates new account and is redirected" do
       visit login_path
-      click_link "Create Account"
+      click_button "Create Account"
 
       fill_in "Name", with: "Bob"
       fill_in "Username", with: "Username"
@@ -19,7 +19,7 @@ RSpec.feature "visitor creates an account" do
       end
 
       expect(page).to have_button("Orders")
-      expect(page).to have_content("So your dryer played you! You've come to the right place.")
+      expect(page).to have_content("So your dryer played you... Bob, you've come to the right place.")
       expect(page).to_not have_content("Login")
       expect(page).to have_content("Logout")
     end
@@ -28,7 +28,7 @@ RSpec.feature "visitor creates an account" do
   context "password confirmation does not match password" do
     scenario "receive flash about not matching and brought back to new user form" do
       visit login_path
-      click_link "Create Account"
+      click_button "Create Account"
 
       fill_in "Name", with: "Bob"
       fill_in "Username", with: "Username"

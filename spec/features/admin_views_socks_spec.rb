@@ -22,7 +22,6 @@ RSpec.feature "Admin can see all items" do
       expect(page).to have_content(sock_3.name)
       expect(page).to have_content("#{sock_3.name} is retired")
       expect(page).to have_link("Edit")
-      expect(page).to have_link("Delete")
     end
   end
 end

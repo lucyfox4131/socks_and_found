@@ -1,9 +1,13 @@
-<div class="container socks" id="all_socks">
+<div class="container socks row-well" id="all_socks">
   <% @socks.each do |sock| %>
-  <div class="one-sock col-md-4">
-    <%= image_tag sock.image_url.url(:medium), size: "250x300" %>
-    <h4 class="sock-label"><%= link_to sock.name, sock_path(sock) %></h4>
-     <%= number_to_currency(sock.price) %>, <%= sock.foot %>
+  <div class="col-md-4 col-sm-6 one-sock">
+    <div id="sock-index-image">
+      <%= image_tag sock.image_url.url(:medium), size: "250x300" %>
+    </div>
+    <div id="sock-index-info">
+      <h4 class="sock-label"><%= link_to sock.name, sock_path(sock) %></h4>
+      <%= number_to_currency(sock.price) %>, <%= sock.foot %> Foot
+    </div>
   </div>
   <% end %>
 </div>

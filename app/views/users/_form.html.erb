@@ -1,11 +1,13 @@
-<%= form_for(@user) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit button %>
-<% end %>
+<div class="form-box">
+  <%= form_for(@user) do |f| %>
+  <h4><%= f.label :name %>
+  <span class="form-field-name"><%= f.text_field :name %></span></h4>
+  <h4><%= f.label :username %>
+  <span class="form-field-username"><%= f.text_field :username %></span></h4>
+  <h4><%= f.label :password %>
+  <span class="form-field-password"><%= f.password_field :password %></span></h4>
+  <h4><%= f.label :password_confirmation %>
+  <span class="form-field-passwordconf"><%= f.password_field :password_confirmation %></span></h4>
+  <%= f.submit button, class: "text-center"%>
+  <% end %>
+</div>

@@ -10,7 +10,6 @@
 <body>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -18,22 +17,19 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Socks And Found</a>
+        <a class="navbar-brand" id="logo" href="/">Socks And Found</a>
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><% if current_user %>
-            Logged in as <%= current_user.name %>!
-            <%= link_to "Logout", logout_path, method: :delete %>
-          <% else %>
-            <%= link_to "Login", login_path %>
-          <% end %></li>
+        <ul class="nav navbar-nav navbar-right" id="navbar-links">
+          <% user_button_display.each do |button| %>
+            <li><%= button %></li>
+          <% end %>
+          <li><%= link_to "Cart (#{@cart.contents.count})", cart_path %></li>
           <li><a href="/socks">All Socks</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <% Category.all.each do |category| %>
+              <% categories.each do |category| %>
                 <li><%= link_to category.title, "/#{category.slug}" %></li>
               <% end %>
             </ul>
@@ -41,20 +37,22 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styles <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <% Style.all.each do |style| %>
+              <% styles.each do |style| %>
                 <li><%= link_to style.name, "/#{style.slug}" %></li>
               <% end %>
             </ul>
           </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-
-      <% flash.each do |name, message| %>
-        <%= content_tag :div, raw(message), id: "flash_#{name}" %>
-      <% end %>
+      </div>
+    </div>
   </nav>
+    <% flash.each do |name, message| %>
+    <%= content_tag :div, raw(message), id: "flash_#{name}" %>
+    <% end %>
 <%= yield %>
 
 </body>
+<footer class="primary-footer text-center">
+  <small>&copy; Socks And Found, All Rights Reserved</small>
+</footer>
 </html>

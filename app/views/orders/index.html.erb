@@ -1,9 +1,23 @@
+<div class="container">
 <h1>Order Summary</h1>
 
-<h4>You have <%= @orders.count %> orders:</h4>
+<h3>You have <%= @orders.count %> orders:</h3>
 
-<div id="one-order">
+<table id="order-table" class="table table-hover">
+<thead>
+  <tr>
+    <th>Order ID</th>
+    <th>Date Ordered</th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr>
   <% @orders.each do |order| %>
-    Order ID: <%= link_to "#{order.id}", order_path(order) %>
+  <td><%= link_to "#{order.id}", order_path(order) %></td>
+  <td><%= order.created_at.strftime("Order placed on %A, %B %d, %Y at %I:%M %p") %></td>
+  </tr>
   <% end %>
+</tbody>
+</table>
 </div>
