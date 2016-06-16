@@ -1,4 +1,4 @@
-<h1 class="text-center"><%= @sock.name %></h1><br><br>
+<h1 class="text-center"><%= @sock.name %></h1><br>
 <div class="col-md-3 col-md-offset-4">
   <%= image_tag @sock.image_url.url(:medium) %>
 </div>
@@ -9,7 +9,7 @@
      Style: <%= @sock.style.name %><br><br>
      Category: <%= @sock.category.title %><br><br></p>
 </div>
-<div class="quantity-button">
+<div class="quantity-button sock-show col-md-12">
   <% present @sock do |sock_presenter| %>
     <%= sock_presenter.retired %>
   <% end %>
