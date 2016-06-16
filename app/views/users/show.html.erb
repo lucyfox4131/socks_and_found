@@ -5,7 +5,7 @@
   </h1>
 
   <div class="dashboard-buttons">
-    <%= button_to "Tweet About Us", new_tweet_path, class: "btn btn-custom btn-person" %>
+    <%= button_to "Tweet About Us", new_tweet_path, class: "btn btn-custom btn-person", method: :get %>
     <%= button_to "Orders", orders_path, method: :get, class: "btn btn-custom btn-person" %>
     <%= button_to "Edit Account Info", edit_user_path(@user), method: :get, class: "btn btn-custom btn-person" %>
   </div>
