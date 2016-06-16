@@ -1,5 +1,12 @@
-<h3>So your dryer played you! You've come to the right place.</h3>
+<div class="container dashboard-header">
+  <h1>
+    So your dryer played you...<br>
+    <%= current_user.name.capitalize %>, you've come to the right place.
+  </h1>
 
-<h4>Click <%= link_to "HERE", new_tweet_path %> to tweet about your shopping experience with socks and found.</h4>
-<%= button_to "Orders", orders_path, method: :get %>
-<%= button_to "Edit Account Info", edit_user_path(@user), method: :get %>
+  <div class="dashboard-buttons">
+    <%= button_to "Tweet About Us", new_tweet_path, class: "btn btn-custom btn-person" %>
+    <%= button_to "Orders", orders_path, method: :get, class: "btn btn-custom btn-person" %>
+    <%= button_to "Edit Account Info", edit_user_path(@user), method: :get, class: "btn btn-custom btn-person" %>
+  </div>
+</div>

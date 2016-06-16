@@ -18,6 +18,7 @@ RSpec.feature "User checks out" do
 
       expect(current_path).to eq(cart_path)
       click_on "Checkout"
+
       expect(current_path).to eq(new_charge_path)
     end
   end

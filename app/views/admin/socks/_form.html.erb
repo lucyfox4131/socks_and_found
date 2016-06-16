@@ -1,17 +1,19 @@
+<div class="form-box">
 <%= form_for(sock) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-  <%= f.label :price %>
-  <%= f.text_field :price %><br>
-  <%= f.label :image_url %>
-  <%= f.file_field :image_url %><br>
-  <%= f.label :foot %>
-  <%= f.select :foot, ["Left", "Right"]%><br>
-  <%= f.label :style %>
-  <%= f.select :style, ["Dress", "Athletic", "Mid Calf", "Wool", "Ankle", "Pop Culture", "Party Time"] %><br>
-  <%= f.label :category %>
-  <%= f.select :category, ["Men", "Women", "Kids", "Unisex"] %><br>
-  <%= f.label :size %>
-  <%= f.select :size, ["Small", "Medium", "Large"] %><br>
+  <h4><%= f.label :name %><br>
+  <span class="form-field-sockname"><%= f.text_field :name %></span></span></h4>
+  <h4><%= f.label :price %><br>
+  <span class="form-field-price"><%= f.text_field :price %></span></h4>
+  <h4><%= f.label :image_url %><br>
+  <span class="form-field-image"><%= f.file_field :image_url %></span></h4>
+  <h4><%= f.label :foot %><br>
+  <span class="select-foot"><%= f.select :foot, ["Left", "Right"]%></span></h4>
+  <h4><%= f.label :style %><br>
+  <span class="select-style"><%= f.select :style, ["Dress", "Athletic", "Mid Calf", "Wool", "Ankle", "Pop Culture", "Party Time"] %></span></h4>
+  <h4><%= f.label :category %><br>
+  <span class="select-category"><%= f.select :category, ["Men", "Women", "Kids", "Unisex"] %></span></h4>
+  <h4><%= f.label :size %><br>
+  <span class="select-size"><%= f.select :size, ["Small", "Medium", "Large"] %></span></h4>
   <%= f.submit %>
 <% end %>
+</div>

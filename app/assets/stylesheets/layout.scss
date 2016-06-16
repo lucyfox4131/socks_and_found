@@ -1,0 +1,46 @@
+// sass rules concerning layout
+
+html {
+  height: 100%;
+
+  body {
+    padding-bottom: 60px;
+    position: relative;
+    height: 100%;
+
+    &:after {
+      content : "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('colorful_socks.jpg');
+      background-size: cover;
+      height: 100vh;
+      width: 100vw;
+      background-position: 70% center;
+      opacity : 0.2;
+      z-index: -1;
+    }
+
+    .navbar {
+      box-shadow: 0 0 5px 0 #bcbebf;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #e7e7e7;
+      box-shadow: 0 -1px 5px 0 #bcbebf;
+    }
+  }
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}

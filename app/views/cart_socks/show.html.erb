@@ -1,27 +1,28 @@
 <div class="container" id="cart-socks">
+  <div class="row cart-sock">
   <% @socks.each do |sock| %>
-    <div class="row cart-sock">
-    <%= image_tag sock.image_url.url(:thumb) %>
-    <%= sock.name %>
-    <%= sock.price %>
-    <%= sock.foot %>
-    <%= sock.category.title %>
-    <%= sock.size.value %>
-    <%= sock.style.name %>
-    Quantity: <%= @cart.count_of(sock.id) %>
-    <%= button_to "+", cart_sock_path(sock, direction: "plus"), method: :patch %>
-    <%= button_to "-", cart_sock_path(sock, direction: "minus"), method: :patch %>
-    <%= button_to "Remove", cart_sock_path(sock), method: :delete %>
+  <div class="col-md-4 col-sm-6">
+      <%= image_tag sock.image_url.url(:thumb) %>
+      <h3><%= link_to sock.name.capitalize, sock_path(sock) %></h3>
+      <p><%= sock.price %>,
+      <%= sock.foot %>,
+      <%= sock.category.title %>,
+      <%= sock.size.value %>,
+      <%= sock.style.name %></p>
+      Quantity: <%= @cart.count_of(sock.id) %>
+      <div class="quantity-button">
+        <%= button_to "-", cart_sock_path(sock, direction: "minus"), method: :patch, class: "btn btn-custom btn-person" %><%= button_to "+", cart_sock_path(sock, direction: "plus"), method: :patch, class: "btn btn-custom btn-person" %>
+        <%= button_to "Remove", cart_sock_path(sock), method: :delete, class: "btn btn-custom btn-person" %>
+      </div>
     </div>
   <% end %>
-  Total Items in Cart: <%= @cart.total %>
 </div>
-
-<div id="total-cart-price">
-  <h4>Cart Total: <%= number_to_currency(@cart.total_price) %></h4>
+  <div id="total-cart-price">
+    <h4>Total Items in Cart: <%= @cart.total %></h4>
+    <h4>Cart Total: <%= number_to_currency(@cart.total_price) %></h4>
+    <div class="quantity-button">
+      <%= checkout_option %>
+      <%= button_to "Keep Shopping", socks_path, method: :get, class: "btn btn-custom btn-person" %>
+    </div>
+  </div>
 </div>
-<% if !current_user %>
-  <%= button_to "Login or Create Account to Purchase Socks", login_path(previous_page: "cart" ), method: :get %>
-<% else %>
-  <%= button_to "Checkout", new_charge_path, method: :get %>
-  <% end %>

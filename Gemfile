@@ -33,6 +33,8 @@ gem 'figaro'
 gem 'twitter', '~> 5.3.1'
 gem 'omniauth-twitter'
 gem 'stripe'
+
+gem 'bootstrap-sass'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
