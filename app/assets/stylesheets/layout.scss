@@ -16,6 +16,8 @@ html {
       left: 0;
       background-image: url('colorful_socks.jpg');
       background-size: cover;
+      background-attachment: fixed;
+      min-height: 1000%;
       height: 100vh;
       width: 100vw;
       background-position: 70% center;
@@ -27,14 +29,7 @@ html {
       box-shadow: 0 0 5px 0 #bcbebf;
     }
 
-    footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 60px;
-      background-color: #e7e7e7;
-      box-shadow: 0 -1px 5px 0 #bcbebf;
-    }
+
   }
 }
 
