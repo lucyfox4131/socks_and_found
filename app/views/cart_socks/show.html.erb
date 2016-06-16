@@ -20,6 +20,9 @@
   <div id="total-cart-price">
     <h4>Total Items in Cart: <%= @cart.total %></h4>
     <h4>Cart Total: <%= number_to_currency(@cart.total_price) %></h4>
-    <%= checkout_option %>
+    <div class="quantity-button">  
+      <%= checkout_option %>
+      <%= button_to "Keep Shopping", socks_path, method: :get, class: "btn btn-custom btn-person" %>
+    </div>
   </div>
 </div>
