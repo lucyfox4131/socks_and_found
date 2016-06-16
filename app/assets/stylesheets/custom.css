@@ -236,3 +236,8 @@ body:after {
 .price {
   font-size: 26px;
 }
+
+.sock-show {
+  display: flex;
+  justify-content: center;
+}

@@ -3,7 +3,7 @@
   <% @socks.each do |sock| %>
   <div class="col-md-4 col-sm-6">
       <%= image_tag sock.image_url.url(:thumb) %>
-      <h3><%= sock.name.capitalize %></h3>
+      <h3><%= link_to sock.name.capitalize, sock_path(sock) %></h3>
       <p><%= sock.price %>,
       <%= sock.foot %>,
       <%= sock.category.title %>,
@@ -20,7 +20,7 @@
   <div id="total-cart-price">
     <h4>Total Items in Cart: <%= @cart.total %></h4>
     <h4>Cart Total: <%= number_to_currency(@cart.total_price) %></h4>
-    <div class="quantity-button">  
+    <div class="quantity-button">
       <%= checkout_option %>
       <%= button_to "Keep Shopping", socks_path, method: :get, class: "btn btn-custom btn-person" %>
     </div>

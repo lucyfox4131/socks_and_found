@@ -1,5 +1,4 @@
 class NavigationsController < ApplicationController
-
   def show
     category = Category.find_by_slug(params[:id])
     style = Style.find_by_slug(params[:id])
