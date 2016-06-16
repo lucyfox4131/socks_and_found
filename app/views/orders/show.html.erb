@@ -1,4 +1,4 @@
-<div class="container">
+  <div class="container">
 <h1>Order Details</h1>
 
 <h3>Details for Your Order #<%= @order.id%></h3>
@@ -8,6 +8,7 @@
   <tr>
     <th>Order ID</th>
     <th>Date Ordered</th>
+    <th>Total Price</th>
   </tr>
 </thead>
 
@@ -15,6 +16,7 @@
   <tr>
   <td><%= @order.id %></td>
   <td><%= @order.created_at.strftime("Order placed on %A, %B %d, %Y at %I:%M %p") %></td>
+  <td><%= @order.total_price %></td>
   </tr>
 </tbody>
 </table>

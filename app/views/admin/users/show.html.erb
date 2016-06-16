@@ -4,6 +4,7 @@
 
 <div class="dashboard-buttons">
   <%= button_to "Edit Account Info", edit_user_path(@admin), method: :get, class: "btn btn-custom btn-person" %>
+  <%= button_to "View All Orders", orders_path, method: :get, class: "btn btn-custom btn-person" %>
   <%= button_to "View All Socks", admin_socks_path, method: :get, class: "btn btn-custom btn-person" %>
   <%= button_to "Add New Sock", new_admin_sock_path, method: :get, class: "btn btn-custom btn-person" %>
 </div>
