@@ -6,7 +6,7 @@
     </div>
     <div id="sock-index-info">
       <h4 class="sock-label"><%= link_to sock.name, sock_path(sock) %></h4>
-      $<%= sock.price %>, <%= sock.foot %> Foot
+      <%= number_to_currency(sock.price) %>, <%= sock.foot %> Foot
     </div>
   </div>
   <% end %>

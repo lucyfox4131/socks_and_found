@@ -1,4 +1,7 @@
-<table id="sock-table">
+<div class="container">
+  <h2>All Socks</h2>
+<table id="sock-table" class="table table-hover">
+  <thead>
   <tr>
     <th>Sock Name</th>
     <th>Sock Descriptors</th>
@@ -7,14 +10,19 @@
     <th>Image</th>
     <th>Actions</th>
   </tr>
+</thead>
+
+<tbody>
   <% @socks.each do |sock| %>
     <tr>
     <td><%= sock.name %></td>
     <td><%= "#{sock.category.title}, #{sock.foot}, #{sock.style.name}, #{sock.size.value}" %></td>
     <td><%= number_to_currency(sock.price) %></td>
     <td><%= sock.status %></td>
-    <td><%= image_tag sock.image_url.url(:thumb) %></td>
-    <td><%= link_to "Edit", edit_admin_sock_path(sock) %> </td>
+    <div class="container"><td><%= image_tag sock.image_url.url(:thumb), class: "img-responsive", :crop => :fill %></td></div>
+    <td><%= link_to "Edit", edit_admin_sock_path(sock) %>
     </tr>
   <% end %>
+</tbody>
 </table>
+</div>
