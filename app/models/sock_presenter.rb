@@ -11,7 +11,7 @@ class SockPresenter
       "Item Retired"
     else
       template.button_to("Add to Cart", "/cart_socks",
-                         params: { sock_id: @sock.id })
+                         params: { sock_id: @sock.id }, class: "btn btn-custom btn-person")
     end
   end
 end

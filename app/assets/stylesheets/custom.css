@@ -232,3 +232,7 @@ body:after {
   height: 100px;
   width: 80px;
 }
+
+.price {
+  font-size: 26px;
+}
