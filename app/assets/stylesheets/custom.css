@@ -22,25 +22,6 @@
   position: absolute;
 }
 
-body {
-  position: relative;
-}
-
-body:after {
-  content : "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url('colorful_socks.jpg');
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  background-position: 70% center;
-  opacity : 0.2;
-  z-index: -1;
-}
-
 .btn-custom {
   background-color: rgb(176, 224, 236);
   margin-top: 5px;

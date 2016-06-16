@@ -11,7 +11,7 @@
   </tr>
 </thead>
 
-<tbody>
+<tbody id="one-order">
   <tr>
   <% @orders.each do |order| %>
   <td><%= link_to "#{order.id}", order_path(order) %></td>
